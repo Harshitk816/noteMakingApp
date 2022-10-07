@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Notes Taking App</title>
+    <script defer src="./script.js"></script>
+</head>
+
+<body style="margin: 0;padding:0;">
+
+    <!-- header -->
+    <div class="flex justify-between px-10 items-center w-full h-20 bg-black">
+        <div class="flex flex-col justify-center items-center">
+            <h1 class="text-2xl text-white font-light">Notes Taking App</h1>
+        </div>
+        <div class="flex text-white justify-center items-center">
+            <img src="https://s2.svgbox.net/materialui.svg?ic=notes&color=#FFFFFF" width="32" height="32">
+        </div>
+    </div>
+
+
+    <!-- add note and remove note buttons -->
+    <div>
+        <button onclick="toggleNotesModal()" class="mt-10 ml-6 bg-black text-white px-3 py-1 rounded-sm">Add
+            Note</button>
+        <button onclick="clearNotes()" class="mt-10 ml-6 bg-black text-white px-3 py-1 rounded-sm">Remove all
+            notes</button>
+    </div>
+    <div id="notes-container" class="mx-6 my-10 grid grid-cols-4">
+
+    </div>
+
+
+
+    <!-- modal -->
+    <div class="absolute top-0 left-0">
+        <div id="notes-modal" class="z-10 w-full h-full hidden bg-gray-900 bg-opacity-80 top-0 fixed sticky-0">
+            <div class="w-full h-full flex justify-center items-center">
+                <div class="grid place-items-center">
+                    <div class="w-11/12 p-12 bg-white">
+                        <h1 class="text-xl font-semibold">Hello there 👋, <span class="font-normal">Please add your
+                                notes here.</h1>
+                        <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">
+                            Heading of the note</label>
+                        <input type="text" id="heading" placeholder="heading"
+                            class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                            required />
+                        <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">
+                            Description of the note</label>
+                        <textarea id="description" placeholder="description"
+                            class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"></textarea>
+                        <button onclick="addNote()"
+                            class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                            Add Note
+                        </button>
+                        <button type="button" onclick="toggleNotesModal()"
+                            class="w-full py-3 mt-6 font-medium tracking-widest text-black uppercase bg-amber-200 shadow-lg focus:outline-none hover:bg-amber-100 hover:shadow-none">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="normalpayalertdata" class="hidden"></div>
+            <button onclick="toggleNotesModal()"
+                class="text-gray-800 absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                aria-label="close">
+                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/cookies-1-svg2.svg"
+                    alt="close"></img>
+                <img class="dark:block hidden"
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/cookies-1-svg2dark.svg" alt="close"></img>
+            </button>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+</html>
